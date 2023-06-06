@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Calculateur de monnaie</h2>
+  
+    <div>
+      <label for="prix">Prix des achats :</label>
+      <input type="number" id="prix" [(ngModel)]="prixTotal">
+    </div>
+  
+    <div>
+      <label for="montant">Montant payé :</label>
+      <input type="number" id="montant" [(ngModel)]="montantPaye">
+    </div>
+  
+    <button (click)="calculerRenduMonnaie()">Calculer</button>
+  
+    <div *ngIf="renduMonnaie">
+      <h3>Rendu de monnaie :</h3>
+      <ul>
+        <li *ngFor="let coupure of renduMonnaie">{{coupure.valeur}} Euro(s)</li>
+      </ul>
+    </div>
+  </div>
